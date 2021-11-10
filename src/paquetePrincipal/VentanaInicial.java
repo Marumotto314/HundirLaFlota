@@ -40,8 +40,12 @@ public class VentanaInicial
 	private static JButton botonIniciarPartida, botonSalir; 
 	private static Jugadores dialogoJugadores;
 	private static JLabel fotoDerecha, fotoIzquierda;
-	private static String nombreJugadores[] = new String[2];// Los nombres de los jugadores 
-	private static int puntuacionJugadores[] = new int[2];// Las puntuaciones de cada jugador
+	private static String jugador1, jugador2;// Los nombres de los jugadores 
+	private static int puntuacion1, puntuacion2;// Las puntuaciones de cada jugador
+	
+	// Juego
+	private static Juego juego1;
+	private static Juego juego2;
 	
 	// Fuente de letra 
 	private static Font fuente;
@@ -69,9 +73,7 @@ public class VentanaInicial
 		
 		panelSuperior.setBackground(color1);
 		panelSuperior.setLayout(new FlowLayout());
-//		panelSuperior.add(fotoSuperior1);
 		panelSuperior.add(mensaje);
-//		panelSuperior.add(fotoSuperior2);
 		
 		// Panel Izquierdo
 		panelIzq = new JPanel();
@@ -141,5 +143,16 @@ public class VentanaInicial
 	public static JFrame getVentana()
 	{
 		return ventana;
+	}
+	public static void recibirJugadores(String j1, String j2)
+	{
+		jugador1 = j1;
+		jugador2 = j2;
+	}
+	public static void iniciarJuego() 
+	{
+		ventana.setVisible(false);
+		juego1 = new Juego(jugador1);
+		juego2 = new Juego(jugador2);
 	}
 }
