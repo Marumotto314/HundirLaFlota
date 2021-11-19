@@ -31,7 +31,7 @@ public class VentanaInicial
 	// Atributos
 	private static JFrame ventana;
 	
-	private static final String RUTA = "E:\\DAM\\2DAM\\HundirLaFlota\\Recursos";// Luego se cambiara para trabajar con rutas relativas
+	private static final String RUTA = ".\\Recursos";
 	
 	private static JLabel mensaje;
 	private static JList<String> puntuaciones;
