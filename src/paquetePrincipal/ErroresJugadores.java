@@ -6,5 +6,5 @@ package paquetePrincipal;
  */
 public enum ErroresJugadores
 {
-	MUCHOTEXTO, NINGUNTEXTO
+	MUCHOTEXTO, NINGUNTEXTO, MISMOJUGADOR
 }

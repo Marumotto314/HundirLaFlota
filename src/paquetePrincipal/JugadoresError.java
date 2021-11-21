@@ -29,7 +29,7 @@ public class JugadoresError
 	public JugadoresError()
 	{
 		// Ventana
-		dialogoPadre = Jugadores.getDialog();
+		dialogoPadre = CreacionJugadores.getDialog();
 		ventana = new JDialog(dialogoPadre, true);
 		ventana.setBounds(dialogoPadre.getX() + 20, dialogoPadre.getY() + 30, 260, 120);
 		ventana.getContentPane().setLayout(new BoxLayout(ventana.getContentPane(), BoxLayout.Y_AXIS));
@@ -63,6 +63,9 @@ public class JugadoresError
 		
 		if(error.equals(ErroresJugadores.MUCHOTEXTO))
 			mensajeError.setText("¿Que tal una abreviatura? 8 letras max");
+		
+		if(error.equals(ErroresJugadores.MISMOJUGADOR))
+			mensajeError.setText("Yo vs Yo");
 		
 		ventana.setVisible(true);
 	}

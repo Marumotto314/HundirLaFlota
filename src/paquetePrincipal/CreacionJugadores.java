@@ -17,7 +17,7 @@ import java.awt.event.ActionListener;
  * JDialog que saltará al querer inciar una nueva partida para preguntar el nombre de los jugadores
  * @author mario
  */
-public class Jugadores
+public class CreacionJugadores
 {
 	// Atributos
 	private static JFrame ventanaPadre;
@@ -30,7 +30,7 @@ public class Jugadores
 	
 	
 	// Constructores
-	public Jugadores()
+	public CreacionJugadores()
 	{
 		ventanaPadre = VentanaInicial.getVentana();
 		ventana = new JDialog(ventanaPadre ,true);
@@ -110,6 +110,11 @@ public class Jugadores
 			JugadoresError.hacerVisible(ErroresJugadores.MUCHOTEXTO);
 			return;
 		}	
+		if(j1.equals(j2))
+		{
+			JugadoresError.hacerVisible(ErroresJugadores.MISMOJUGADOR);
+			return;
+		}
 		
 		ventana.setVisible(false);
 		VentanaInicial.recibirJugadores(j1, j2);

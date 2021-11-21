@@ -19,6 +19,8 @@ import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
 import ficheros.Puntuaciones;
+import juego.GestorJugadores;
+import juego.Juego;
 
 /**
  * Esta clase creará una estancia estática del lanzador del juego que contendrá un botón
@@ -38,7 +40,7 @@ public class VentanaInicial
 	private static JScrollPane scrollLista;
 	private static JPanel iniciarPartida, panelIzq, panelDch, panelSuperior;
 	private static JButton botonIniciarPartida, botonSalir; 
-	private static Jugadores dialogoJugadores;
+	private static CreacionJugadores dialogoJugadores;
 	private static JLabel fotoDerecha, fotoIzquierda;
 	private static String jugador1, jugador2;// Los nombres de los jugadores 
 	private static int puntuacion1, puntuacion2;// Las puntuaciones de cada jugador
@@ -113,7 +115,7 @@ public class VentanaInicial
 		botonIniciarPartida.addActionListener(new ActionListener() {
 			public void actionPerformed (ActionEvent e)
 	        {
-				dialogoJugadores = new Jugadores();
+				dialogoJugadores = new CreacionJugadores();
 	        }
 		});
 		botonSalir.addActionListener(new ActionListener() {
@@ -154,5 +156,10 @@ public class VentanaInicial
 		ventana.setVisible(false);
 		juego1 = new Juego(jugador1);
 		juego2 = new Juego(jugador2);
+		GestorJugadores.recibirJugadores(juego1, juego2);
+	}
+	public static void juegoTerminado(int pJ1, int pJ2)
+	{
+		// TODO Terminar juego e crear una clase JDialog con un mensaje de finalización de la partida
 	}
 }
